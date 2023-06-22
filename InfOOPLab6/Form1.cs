@@ -22,7 +22,6 @@ namespace InfOOPLab6
         {
             try
             {
-                // Створення об'єктів прямих зі значень полів на формі
                 Line line1 = new Line(
                     double.Parse(textBox1.Text),
                     double.Parse(textBox2.Text),
@@ -33,10 +32,8 @@ namespace InfOOPLab6
                     double.Parse(textBox5.Text),
                     double.Parse(textBox6.Text));
 
-                // Перевірка, чи існують прямі
                 bool linesExist = CheckLinesExist(line1, line2);
 
-                // Виведення результату на форму
                 label6.Text = linesExist ? "Lines exist" : "Lines do not exist";
             }
 
@@ -48,10 +45,8 @@ namespace InfOOPLab6
 
         private bool CheckLinesExist(Line line1, Line line2)
         {
-            // Розрахунок значення d
             double d = line1.A * line2.B - line2.A * line1.B;
 
-            // Перевірка, чи d не дорівнює нулю
             return d != 0;
         }
 
